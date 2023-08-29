@@ -41,6 +41,7 @@ fieldset {
   border: none;
 }
 
+
 .visually-hidden {
   position: absolute;
   inline-size: 1px;
@@ -51,9 +52,6 @@ fieldset {
   white-space: nowrap;
 }
 
-/* 1.Расположить блок .content посередине .page 
-2.Расположить элементы .content в строку, прижав к низу вертикальной оси.
-3.Задать горизонтальные размеры .content и отступы между его элементами.*/
 .content {
   padding: 133px 30px;
   display: flex;
@@ -63,16 +61,13 @@ fieldset {
   gap: 30px;
 }
 
-/* 4.Расположить элементы .search-form в строку и пропорционально распределить между ними свободное пространство, прижать их к началу контейнера. */
 .search-form {
   display: flex;
   justify-content: space-between;
   align-items: flex-end; 
 }
 
-/*5.Установить вертикальный размер для .content__list и добавить скролл при переполнении.*/
 .content__list {
-  position: relative;
   display: flex;
   flex-direction: column;
   height: 298px;
@@ -80,19 +75,12 @@ fieldset {
   margin-top: 26px;
 }
 
-
-
-/*6.Растянуть .content__details во всю доступную ширину и высоту контейнера и добавить отступы между заголовком и зоной с карточками.*/
 .content__details {
   min-height: 100%;
   width: 100%;
 }
 
-/*Задать размеры контейнеру .result__video-container и добавить отступ снизу.
-position: relative; здесь для preloader*/
-
 .result__video-container {
-  position: relative;
   width: 711px;
   height: 100%;
   padding-bottom: 16px;
@@ -104,15 +92,17 @@ position: relative; здесь для preloader*/
   height: 100%;
 }
 
-/*Создать вертикальные отступы между элементами .content__list-item (у всех, кроме последнего).*/
 li:not(:last-child) {
   margin-top: 30px;
 }
 
-/*Расположить элементы внутри контейнера .content__video-card в строку, прижав к началу контейнера по дополнительной оси.*/
 .content__video-card {
   display: flex;
   justify-content: space-between;
+}
+
+.content__video-card:active {
+  background: #545050;
 }
 
 .content__video-card-thumbnail {
@@ -120,11 +110,14 @@ li:not(:last-child) {
   height: 100%;
 }
 
-/*Пока не поняла: Сделать так, чтобы .content__video-card-description-container занимал всё доступное пространство, не занятое картинкой.*/
 .content__video-card-description {
-  /* object-fit: contain; */
   margin-top: 6px;
+}
 
+
+.content__video-card-description-container:hover {
+  text-decoration: underline 1px;
+  text-underline-offset: 6px;
 }
 
 .search-form__fieldset-title {
@@ -134,6 +127,7 @@ li:not(:last-child) {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  padding-bottom: 5px;
 }
 
 .title {
@@ -169,9 +163,7 @@ li:not(:last-child) {
   text-transform: uppercase;
 }
 
-
 .search-form__textfield {
-  margin-top: 5px;
   border-top: 1px solid #FFF;
   border-bottom: 1px solid #FFF;
   border-left-width: 0px;
@@ -182,27 +174,47 @@ li:not(:last-child) {
   -moz-appearance: none;
 }
 
-input {
+
+input[type=text] {
   width: 225px;
   height: 27px;
-  cursor: pointer;
-}
-
-input::placeholder {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   color: rgba(255, 255, 255, 0.70);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  appearance: none; 
 }
+
+
+input[type=text]::placeholder {
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.70);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+input[type=text]:hover {
+  cursor: text;
+}
+
+input[type=text]:focus {
+  outline: none;
+}
+
+input[type=text]:focus-visible {
+  outline: 1px solid #FFF;
+}
+
 
 .search-form__checkbox-list {
   display: flex;
   flex-direction: row;
   gap: 15px;
 }
+
 
 .search-form__pseudo-checkbox {
   display: inline-block;
@@ -213,7 +225,22 @@ input::placeholder {
   vertical-align: middle;
   background-color: transparent;
   border: 1px solid #FFF;
+}
+
+.search-form__pseudo-checkbox:hover {
   cursor: pointer;
+}
+
+.search-form__label-text:hover {
+  cursor: pointer;
+  text-decoration: underline 1px;
+  text-underline-offset: 3px
+}
+
+input[type='checkbox']:checked + span {
+  background-color: #FFF;
+  border: 1px solid #000;
+  box-shadow: 0px 0px 0px 1px #fff;
 }
 
 button {
@@ -234,6 +261,16 @@ button {
   gap: 10px;
 }
 
+button:active {
+  border: 1px solid #FFF;
+  background: #545050;  
+}
+
+button:hover {
+  text-decoration: underline 1px;
+  text-underline-offset: 3px;
+}
+
 .search-form__submit-button {
   width: 194px;
   height: 34px;
@@ -242,4 +279,5 @@ button {
 .more-button {
   width: 399px;
   height: 34px;
+  margin-top: 30px;
 }
