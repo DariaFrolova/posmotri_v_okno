@@ -41,7 +41,6 @@ fieldset {
   border: none;
 }
 
-
 .visually-hidden {
   position: absolute;
   inline-size: 1px;
@@ -68,11 +67,28 @@ fieldset {
 }
 
 .content__list {
+  position: relative;
   display: flex;
   flex-direction: column;
   height: 298px;
+  /* было изменение width с 399 */
+  width: 400px;
   overflow: scroll;
   margin-top: 26px;
+  /* был добавлен paddig для того, чтобы рамка focus-visible была видна */
+  padding: 1px;
+}
+
+.content__list-item:focus-within {
+  outline: 1px solid #fff;
+}
+
+.content__list-item:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: none;
 }
 
 .content__details {
@@ -81,6 +97,7 @@ fieldset {
 }
 
 .result__video-container {
+  position: relative;
   width: 711px;
   height: 100%;
   padding-bottom: 16px;
@@ -99,6 +116,7 @@ li:not(:last-child) {
 .content__video-card {
   display: flex;
   justify-content: space-between;
+  margin: 1px;
 }
 
 .content__video-card:active {
@@ -113,7 +131,6 @@ li:not(:last-child) {
 .content__video-card-description {
   margin-top: 6px;
 }
-
 
 .content__video-card-description-container:hover {
   text-decoration: underline 1px;
@@ -174,47 +191,40 @@ li:not(:last-child) {
   -moz-appearance: none;
 }
 
-
-input[type=text] {
+input[type="text"] {
   width: 225px;
   height: 27px;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
-  color: rgba(255, 255, 255, 0.70);
+  color: #ffffffb3;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
 
-
-input[type=text]::placeholder {
+input[type="text"]::placeholder {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
-  color: rgba(255, 255, 255, 0.70);
+  color: #ffffffb3;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
 
-input[type=text]:hover {
+input[type="text"]:hover {
   cursor: text;
 }
 
-input[type=text]:focus {
-  outline: none;
-}
-
-input[type=text]:focus-visible {
+input[type="text"]:focus-visible {
   outline: 1px solid #FFF;
+  border: none;
 }
-
 
 .search-form__checkbox-list {
   display: flex;
   flex-direction: row;
   gap: 15px;
 }
-
 
 .search-form__pseudo-checkbox {
   display: inline-block;
@@ -237,10 +247,23 @@ input[type=text]:focus-visible {
   text-underline-offset: 3px
 }
 
-input[type='checkbox']:checked + span {
-  background-color: #FFF;
+input[type="checkbox"]:checked + span {
+  background-color: #ffffff;
   border: 1px solid #000;
   box-shadow: 0px 0px 0px 1px #fff;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+.search-form__checkbox:focus {
+  outline: none;
+}
+
+.search-form__checkbox:focus:not(:focus-visible) {
+  outline: none;
 }
 
 button {
@@ -271,13 +294,22 @@ button:hover {
   text-underline-offset: 3px;
 }
 
+button:focus {
+  outline: none;
+}
+
+button:focus-visible {
+  outline: 1px solid #FFF;
+  outline-offset: 2px;
+}
+
 .search-form__submit-button {
   width: 194px;
   height: 34px;
 }
 
 .more-button {
-  width: 399px;
+  width: 392px;
   height: 34px;
-  margin-top: 30px;
+  margin: 30px 2px 2px 2px;
 }
