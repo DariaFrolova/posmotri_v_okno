@@ -37,6 +37,10 @@ ol {
   list-style: none;
 }
 
+body {
+  margin: 0 auto;
+}
+
 fieldset {
   border: none;
 }
@@ -71,11 +75,9 @@ fieldset {
   display: flex;
   flex-direction: column;
   height: 298px;
-  /* было изменение width с 399 */
   width: 400px;
-  overflow: scroll;
+  overflow: auto;
   margin-top: 26px;
-  /* был добавлен paddig для того, чтобы рамка focus-visible была видна */
   padding: 1px;
 }
 
@@ -241,7 +243,7 @@ input[type="text"]:focus-visible {
   cursor: pointer;
 }
 
-.search-form__label-text:hover {
+.search-form__label:hover {
   cursor: pointer;
   text-decoration: underline 1px;
   text-underline-offset: 3px
