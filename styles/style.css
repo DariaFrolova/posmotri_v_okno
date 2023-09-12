@@ -119,11 +119,6 @@ li:not(:first-child) {
   margin-top: 30px;
 }
 
-/*убран отступ над кнопкой "показать еще"*/
-li:last-child {
-  margin-top: 0;
-}
-
 .content__video-card {
   display: flex;
   justify-content: space-between;
@@ -164,7 +159,7 @@ li:last-child {
 }
 
 .content__card-link_current {
-/*необходим стилизовать(назначить цвет фона активной карточки) для content__card-link_current */
+  background-color: #545050;
 }
 
 .content__card-link {
@@ -329,5 +324,5 @@ button:focus-visible {
 .more-button {
   width: 392px;
   height: 38px;
-  margin: 30px 2px 2px 2px;
+  margin: 0 2px 2px 2px;
 }
