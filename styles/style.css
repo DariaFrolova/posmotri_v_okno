@@ -44,10 +44,6 @@ body {
   margin: 0 auto;
 }
 
-fieldset {
-  border: none;
-}
-
 .visually-hidden {
   position: absolute;
   inline-size: 1px;
@@ -80,6 +76,7 @@ fieldset {
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
+  border: none;
 }
 
 .content__list {
