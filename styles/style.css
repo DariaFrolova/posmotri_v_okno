@@ -119,6 +119,11 @@ li:not(:first-child) {
   margin-top: 30px;
 }
 
+/*убран отступ над кнопкой "показать еще"*/
+li:last-child {
+  margin-top: 0;
+}
+
 .content__video-card {
   display: flex;
   justify-content: space-between;
@@ -128,7 +133,7 @@ li:not(:first-child) {
   width: 194px;
   height: 103px;
   object-fit: cover;
-  object-position: right bottom;
+  object-position: center;
 }
 
 .content__video-card-description {
@@ -156,6 +161,10 @@ li:not(:first-child) {
 
 .content__accent {
   color: #545050;
+}
+
+.content__card-link_current {
+/*необходим стилизовать(назначить цвет фона активной карточки) для content__card-link_current */
 }
 
 .content__card-link {
